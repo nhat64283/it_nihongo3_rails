@@ -69,6 +69,7 @@ before_action :authenticate_user!
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :number_of_pages)
+      
+      params.require(:book).permit(:title, :number_of_pages, :image)
     end
 end
