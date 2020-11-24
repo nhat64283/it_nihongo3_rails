@@ -1,7 +1,24 @@
 <%= render 'layouts/navbar' %>
-
 <h1>Profile</h1>
-<h3>Email Address</h3>
 <p class='user-email'>
+    <h3>Email Address</h3>
     <%= current_user.email %>
+</p>
+<p class='user-email'>
+    <h3>Name</h3>
+    <%= current_user.name %>
+</p>
+<p class='user-email'>
+    <h3>Age</h3>
+    <%= current_user.age %>
+</p>
+
+<p>
+  <% if current_user.avatar.attached? %>
+    <%= image_tag current_user.avatar %>
+  <% end %>
+</p>
+
+<p class="edit">
+    <%= link_to "Edit", edit_user_registration_path %>
 </p>
